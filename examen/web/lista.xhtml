@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+     <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Listado de solicitudes</h1>
+        <h:form>
+            <h:dataTable var="item"
+                value="#{AdministradorSolicitudes.laLista.lista}">
+                <h:column>#{item.cliente}</h:column>
+                <h:column>#{item.detCaso}</h:column>
+                <h:column>#{item.fecha}</h:column>
+                <h:column>
+                    <h:commandButton value="Ver datos"
+                                     action="#{AdministradorSolicitudes.datos(item.cliente)}"/>
+                </h:column>
+            </h:dataTable>
+           </h:form>
+    </h:body>
+</html>
